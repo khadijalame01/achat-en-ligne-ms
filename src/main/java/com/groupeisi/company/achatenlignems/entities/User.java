@@ -1,12 +1,22 @@
 package com.groupeisi.company.achatenlignems.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.*;
 
-public class User extends BaseEntity{
+@Entity
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Table(name = "users", uniqueConstraints = {
+        @UniqueConstraint(columnNames = "email"),
+        @UniqueConstraint(columnNames = "username"),
+        @UniqueConstraint(columnNames = "phone")
+})
+public class User extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,11 +32,12 @@ public class User extends BaseEntity{
     @Column(name = "is_enabled", columnDefinition = "bit not null default 0")
     private boolean isEnabled = true;
     @Column(name = "account_is_enabled", columnDefinition = "bit not null default 1")
-    private boolean accountIsEnabled = true ;
+    private boolean accountIsEnabled = true;
     @Column(name = "account_is_not_expired", columnDefinition = "bit not null default 1")
     private boolean accountIsNotExpired = true;
     @Column(name = "account_is_not_locked", columnDefinition = "bit not null default 1")
     private boolean accountIsNotLocked = true;
     @Column(name = "credential_not_expired", columnDefinition = "bit not null default 1")
     private boolean credentialNotExpired = true;
+
 }
