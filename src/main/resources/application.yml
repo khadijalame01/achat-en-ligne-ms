@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: achat-en-ligne-ms
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/achat-en-ligne-db?useSSL=false&serverTimezone=UTC
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+server:
+  port: 8082
+  servlet:
+    context-path: /api/v1
+
+#OPEN API SWAGGER
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html

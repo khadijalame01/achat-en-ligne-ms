@@ -1,0 +1,33 @@
+package com.groupeisi.company.achatenlignems.entities;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+public class User extends BaseEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String firstname;
+    private String lastname;
+    private String email;
+    private String phone;
+    private String username;
+    @Column(name = "is_admin", columnDefinition = "bit not null default 0")
+    private boolean isAdmin = false;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private String password;
+    @Column(name = "is_enabled", columnDefinition = "bit not null default 0")
+    private boolean isEnabled = true;
+    @Column(name = "account_is_enabled", columnDefinition = "bit not null default 1")
+    private boolean accountIsEnabled = true ;
+    @Column(name = "account_is_not_expired", columnDefinition = "bit not null default 1")
+    private boolean accountIsNotExpired = true;
+    @Column(name = "account_is_not_locked", columnDefinition = "bit not null default 1")
+    private boolean accountIsNotLocked = true;
+    @Column(name = "credential_not_expired", columnDefinition = "bit not null default 1")
+    private boolean credentialNotExpired = true;
+}
