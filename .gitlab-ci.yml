@@ -1,0 +1,20 @@
+include:
+  - remote: 'https://gitlab.com/isidk/m2gl2026/spring/environment/-/raw/main/.gitlab-ci.yml'
+
+variables:
+  PROJECT_NAME: commande-ms
+
+build-job:
+  extends: .build-job
+
+auto-version-job:
+  extends: .auto-version-job
+
+build-docker-image-job-staging:
+  extends: .build-docker-image-job-staging
+
+build-docker-image-job-prod:
+  extends: .build-docker-image-job-prod
+
+deploy-job-staging:
+  extends: .deploy-job-staging
