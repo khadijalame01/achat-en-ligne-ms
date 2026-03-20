@@ -3,7 +3,6 @@ include:
 
 variables:
   PROJECT_NAME: achat-en-ligne
-  MAVEN_OPTS: "-DskipTests=true"   # ← AJOUT : skip les tests
 
 build-job:
   extends: .build-job
@@ -19,3 +18,4 @@ build-docker-image-job-prod:
 
 deploy-job-staging:
   extends: .deploy-job-staging
+
