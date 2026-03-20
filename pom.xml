@@ -142,13 +142,14 @@
                     <image>
                         <name>khadija1502/${project.artifactId}:${project.version}</name>
                         <publish>true</publish>
-                        <docker>
-                            <publishRegistry>
-                                <username>${docker.user}</username>
-                                <password>${docker.token}</password>
-                            </publishRegistry>
-                        </docker>
                     </image>
+                    <docker>
+                        <publishRegistry>
+                            <username>${docker.user}</username>
+                            <password>${docker.token}</password>
+                        </publishRegistry>
+                    </docker>
+
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
