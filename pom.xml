@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.xoslu.tech</groupId>
-    <artifactId>e-bank</artifactId>
+    <artifactId>achat-en-ligne-ms</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>achat-en-ligne-ms</name>
     <description>Application spring boot permettant de gérer des comptes bancaires</description>
