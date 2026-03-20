@@ -11,7 +11,7 @@
     <groupId>com.xoslu.tech</groupId>
     <artifactId>e-bank</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>e-bank</name>
+    <name>achat-en-ligne-ms</name>
     <description>Application spring boot permettant de gérer des comptes bancaires</description>
     <url/>
     <licenses>
