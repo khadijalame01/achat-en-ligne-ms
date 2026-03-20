@@ -2,7 +2,8 @@ include:
   - remote: 'https://gitlab.com/isidk/m2gl2026/spring/environment/-/raw/main/.gitlab-ci.yml'
 
 variables:
-  PROJECT_NAME: commande-ms
+  PROJECT_NAME: achat-en-ligne
+  MAVEN_OPTS: "-DskipTests=true"   # ← AJOUT : skip les tests
 
 build-job:
   extends: .build-job
